@@ -1,0 +1,31 @@
+.Qualification .qual_cont {
+  padding: 20px;
+  color: var(--textColor);
+  box-shadow: 0 0 4px var(--textColor);
+  text-transform: capitalize;
+  text-align: center;
+  letter-spacing: 1px;
+  font-size: 19px;
+  font-weight: 500;
+}
+
+.Qualification .qual_cont p {
+  margin-bottom: 20px;
+  line-height: 1.7;
+}
+
+@media (max-width: 991px) {
+  .Qualification .qual_cont p {
+    margin-bottom: 25px;
+  }
+}
+
+.Qualification .qual_cont p svg {
+  margin: 0 6px;
+  color: var(--mainColor);
+}
+
+.Qualification .qual_cont p span {
+  font-family: var(--fontAlt);
+  font-size: 25px;
+}

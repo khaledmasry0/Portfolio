@@ -1,0 +1,36 @@
+.Skills .Skills_cont {
+  padding: 20px;
+  color: var(--textColor);
+  box-shadow: 0 0 4px var(--textColor);
+  text-transform: capitalize;
+  text-align: center;
+  letter-spacing: 1px;
+  font-size: 19px;
+  font-weight: 500;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+@media (max-width: 991px) {
+  .Skills .Skills_cont {
+    gap: 40px;
+  }
+}
+
+@media (min-width: 992px) {
+  .Skills .Skills_cont {
+    padding: 40px 180px;
+  }
+}
+
+.Skills .Skills_cont .Skill {
+  width: 100px;
+}
+
+.Skills .Skills_cont .Skill svg {
+  color: var(--mainColor);
+  font-size: 30px;
+  margin-bottom: 5px;
+}

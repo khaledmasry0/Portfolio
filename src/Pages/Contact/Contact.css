@@ -1,0 +1,116 @@
+.Contact .Contact_col {
+  padding: 20px;
+  color: var(--textColor);
+  box-shadow: 0 0 4px var(--textColor);
+  text-transform: capitalize;
+  text-align: center;
+  letter-spacing: 1px;
+  font-size: 19px;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  width: fit-content;
+  margin: auto;
+  padding: 20px 40px;
+  transition: var(--mainTransition);
+  border-radius: 0.3rem;
+}
+
+.Contact .Contact_col:hover {
+  box-shadow: 0 0 20px var(--altColor);
+
+}
+
+@media (max-width: 576px) {
+  .Contact .Contact_col {
+    padding: 15px;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.Contact .Contact_col svg {
+  color: var(--mainColor);
+  margin-right: 15px;
+  font-size: 28px;
+  padding-top: 5px;
+}
+
+@media (max-width: 576px) {
+  .Contact .Contact_col svg {
+    font-size: 20px;
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+}
+
+.Contact .Contact_col .number {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+@media (max-width: 576px) {
+  .Contact .Contact_col .number {
+    align-items: center;
+  }
+}
+
+.Contact .Contact_col .number h3 {
+  font-weight: 600;
+}
+
+.Contact .Contact_col .number a {
+  font-family: var(--fontAlt);
+  color: var(--mainColor);
+  text-transform: lowercase;
+}
+
+@media (max-width: 576px) {
+  .Contact .Contact_col .number a {
+    font-size: 14px;
+  }
+}
+
+.Contact .rowForm {
+  margin-top: 80px;
+}
+
+@media (max-width: 991px) {
+  .Contact .rowForm {
+    margin-top: 0;
+  }
+}
+
+.Contact .rowForm img {
+  width: 88%;
+  transform: translateY(-17px);
+  height: 90%;
+}
+
+.Contact .rowForm .Contact_form {
+  text-align: center;
+}
+
+.Contact .rowForm .Contact_form form input,
+.Contact .rowForm .Contact_form form textarea {
+  width: 100%;
+  padding: 15px 20px;
+  background: none;
+  border: 1px solid rgba(200, 162, 90, 0.35);
+  margin-bottom: 30px;
+  border-radius: 10px;
+  caret-color: var(--mainColor);
+  color: var(--mainColor);
+  transition: var(--mainTransition);
+}
+
+.Contact .rowForm .Contact_form form input:focus,
+.Contact .rowForm .Contact_form form textarea:focus {
+  outline: none;
+  box-shadow: 1px 0 7px 0 var(--mainColor);
+}
+
+.Contact .rowForm .Contact_form form textarea {
+  resize: none;
+}

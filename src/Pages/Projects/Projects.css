@@ -1,0 +1,65 @@
+.Projects .projects_hold .project {
+  padding: 20px;
+  color: var(--textColor);
+  box-shadow: 0 0 4px var(--textColor);
+  text-transform: capitalize;
+  text-align: center;
+  letter-spacing: 1px;
+  font-size: 19px;
+  font-weight: 500;
+  padding: 0;
+  border: 1px solid var(--textColor);
+  border-radius: 10px;
+  overflow: hidden;
+  height: 350px;
+  cursor: pointer;
+  position: relative;
+  font-size: 22px;
+  transition: var(--mainTransition);
+}
+
+.Projects .projects_hold .project:hover {
+  box-shadow: 0 0 7px var(--textColor);
+}
+
+.Projects .projects_hold .project:hover .project_name {
+  filter: grayscale(0);
+}
+
+.Projects .projects_hold .project:hover:not(.small) .image_holder img {
+  transform: translateY(calc(-100% + 295px));
+}
+
+.Projects .projects_hold .project .project_name {
+  background-color: var(--altColor);
+  color: var(--mainColor);
+  padding: 10px 0;
+  font-weight: 600;
+  filter: grayscale(100%);
+  transition: var(--mainTransition);
+}
+
+.Projects .projects_hold .project .github {
+  position: absolute;
+  z-index: 5;
+  right: 10px;
+  top: 11px;
+  color: var(--mainColor);
+  filter: grayscale(100%);
+  transition: var(--mainTransition);
+}
+
+.Projects .projects_hold .project .github:hover {
+  filter: grayscale(0);
+}
+
+.Projects .projects_hold .project .image_holder {
+  border: 1px solid var(--textColor);
+  overflow: hidden;
+}
+
+.Projects .projects_hold .project .image_holder img {
+  width: 100%;
+  height: 100%;
+  transition: 8s transform;
+}

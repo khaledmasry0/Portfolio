@@ -1,0 +1,195 @@
+.landing {
+  height: calc(100vh - 83px);
+}
+
+@media (max-width: 767px) {
+  .landing {
+    padding: 30px 0 !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .landing {
+    height: calc(100vh - 138px);
+  }
+}
+
+.landing .profile_holder {
+  position: relative;
+}
+
+.landing .profile_holder svg {
+  filter: grayscale(13%);
+  opacity: 0;
+  animation: fadeImg 0.7s forwards linear;
+}
+
+@media (min-width: 992px) {
+  .landing .profile_holder {
+    width: 400px;
+    left: 10%;
+    top: 7%;
+  }
+}
+
+@media (max-width: 991px) {
+  .landing .profile_holder {
+    width: 350px;
+    left: 0;
+    top: 15%;
+  }
+}
+
+@media (max-width: 767px) {
+  .landing .profile_holder {
+    width: 300px;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 22%;
+  }
+}
+
+@media (max-width: 576px) {
+  .landing .profile_holder {
+    width: 285px;
+    top: 18%;
+  }
+}
+
+.landing .profile_name,
+.landing .profile_job {
+  position: absolute;
+  color: var(--textColor);
+  left: 60%;
+  font-size: 24px;
+  font-weight: 500;
+  padding: 10px 15px;
+  box-shadow: 0 0 10px var(--mainColor);
+  border-radius: 5px;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 991px) {
+
+  .landing .profile_name,
+  .landing .profile_job {
+    font-size: 22px;
+    left: 50%;
+  }
+}
+
+@media (max-width: 767px) {
+
+  .landing .profile_name,
+  .landing .profile_job {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 576px) {
+
+  .landing .profile_name,
+  .landing .profile_job {
+    font-size: 18px;
+  }
+}
+
+.landing .profile_name span,
+.landing .profile_job span {
+  color: var(--mainColor);
+  font-size: 30px;
+  font-family: var(--fontAlt);
+  display: block;
+  letter-spacing: 0;
+}
+
+@media (max-width: 991px) {
+
+  .landing .profile_name span,
+  .landing .profile_job span {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 767px) {
+
+  .landing .profile_name span,
+  .landing .profile_job span {
+    font-size: 26px;
+  }
+}
+
+@media (max-width: 576px) {
+
+  .landing .profile_name span,
+  .landing .profile_job span {
+    font-size: 22px;
+  }
+}
+
+.landing .profile_name {
+  top: -100%;
+  min-width: 210px;
+  animation: animeName 2s ease-in-out forwards;
+}
+
+@media (max-width: 767px) {
+  .landing .profile_name {
+    right: 15px;
+  }
+}
+
+@media (max-width: 576px) {
+  .landing .profile_name {
+    right: auto;
+    left: 15px;
+    top: 0;
+    transform: scale(0);
+    min-width: auto;
+    max-width: calc(100% - 30px);
+    animation: animeNameXs 1s ease-in-out forwards;
+    animation-delay: 0.7s;
+  }
+}
+
+.landing .profile_job {
+  top: -100%;
+  transform: translateY(-100%);
+  animation: animeJob 2s ease-in-out forwards;
+  animation-delay: 2s;
+  min-width: 316px;
+}
+
+@media (max-width: 767px) {
+  .landing .profile_job {
+    left: 15px;
+  }
+}
+
+@media (max-width: 576px) {
+  .landing .profile_job {
+    top: 80%;
+    min-width: auto;
+    max-width: calc(100% - 30px);
+    transform: scale(0);
+    animation: animeNameXs 1s ease-in-out forwards;
+    animation-delay: 2.5s;
+  }
+}
+
+.landing .angledown {
+  position: absolute;
+  color: var(--mainColor);
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 35px;
+  opacity: 0;
+  animation: angleDown 1.5s 4.5s infinite ease-in-out;
+}
+
+@media (max-width: 767px) {
+  .landing .angledown {
+    bottom: 5px;
+    font-size: 30px;
+  }
+}

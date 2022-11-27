@@ -1,0 +1,363 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,500;1,900&family=Rubik+Dirt&display=swap");
+
+:root {
+  --fontBase: "Playfair Display", serif;
+  --fontAlt: "Rubik Dirt", cursive;
+  --mainTransition: .3s;
+  --mainColor: #c8a25a;
+  --altColor: #534666;
+  --textColor: #fff;
+  --bgColor: #1a1719;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--fontBase) !important;
+  background-color: var(--bgColor);
+  padding-top: 83px;
+}
+
+@media (max-width: 576px) {
+  body {
+    padding-top: 138px;
+  }
+}
+
+body.light {
+  --textColor: #000;
+  --bgColor: #fff;
+  --mainColor: #bc8827;
+  --altColor: #2d2638;
+}
+
+body.light .main_heading {
+  color: var(--altColor);
+  background-color: var(--mainColor);
+  border-color: var(--mainColor);
+  box-shadow: 0 0 20px var(--mainColor);
+}
+
+body.light .custom_button {
+  border: 2px solid var(--mainColor);
+  box-shadow: 0 0 10px var(--mainColor);
+  color: var(--altColor);
+  background-color: var(--mainColor);
+  filter: grayscale(100%);
+}
+
+body.light .custom_button:hover {
+  filter: grayscale(0);
+}
+
+body.light .profile_name,
+body.light .profile_job {
+  background-color: var(--mainColor);
+}
+
+body.light .profile_name span,
+body.light .profile_job span {
+  color: var(--altColor);
+}
+
+body.light .Projects .projects_hold .project {
+  box-shadow: 0 0 7px var(--altColor);
+  border-color: var(--altColor);
+}
+
+body.light .Projects .projects_hold .project:hover {
+  box-shadow: 0 0 17px var(--altColor);
+}
+
+body.light .About .About_Info .col_info .view {
+  color: var(--altColor) !important;
+}
+
+body.light .Contact .rowForm .Contact_form form input,
+body.light .Contact .rowForm .Contact_form form textarea {
+  border: 1px solid rgba(188, 136, 39, 0.35);
+}
+
+body.light .Contact_col {
+  background-color: var(--altColor);
+  color: #fff;
+  box-shadow: 0 0 8px var(--altColor);
+}
+
+a {
+  text-decoration: none !important;
+}
+
+ul {
+  display: flex;
+  list-style: none;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+::selection {
+  background-color: var(--altColor);
+  color: var(--mainColor);
+}
+
+.flex_center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex_between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+::-webkit-scrollbar {
+  width: 9px;
+  height: 9px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--bgColor);
+  border-radius: 15px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--mainColor);
+  border-radius: 15px;
+}
+
+::-webkit-scrollbar-corner {
+  background-color: var(--bgColor);
+}
+
+.section_padding {
+  padding: 60px 0;
+}
+
+.main_heading {
+  text-align: center;
+  color: var(--mainColor);
+  font-size: 45px;
+  font-weight: 800;
+  padding: 10px 20px;
+  border: 2px solid var(--altColor);
+  width: fit-content;
+  margin: 0 auto 80px;
+  transition: var(--mainTransition);
+  box-shadow: 0 0 20px var(--altColor);
+}
+
+.main_heading:hover {
+  filter: grayscale(100%);
+}
+
+@media (max-width: 991px) {
+  .main_heading {
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 767px) {
+  .main_heading {
+    font-size: 35px;
+  }
+}
+
+@media (max-width: 576px) {
+  .main_heading {
+    font-size: 30px;
+  }
+}
+
+.custom_button {
+  background: none;
+  color: var(--mainColor);
+  border: 2px solid var(--altColor);
+  box-shadow: 0 0 10px var(--altColor);
+  font-size: 21px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  padding: 13px 19px;
+  border-radius: 6px;
+  outline: none;
+  transition: var(--mainTransition);
+  cursor: pointer;
+  filter: grayscale(100%);
+}
+
+.custom_button:hover {
+  filter: grayscale(20%);
+}
+
+.fontalt {
+  font-family: var(--fontAlt);
+}
+
+.loader_cont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  height: calc(100% + 83px);
+  top: -83px;
+}
+
+@media (max-width: 576px) {
+  .loader_cont {
+    height: calc(100% + 138px);
+    top: -138px;
+  }
+}
+
+.loader_cont .loader {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  background: linear-gradient(#B25068, #c8a25a, #534666);
+  border-radius: 50%;
+  animation: rotateAnime infinite linear 0.7s;
+}
+
+@media (max-width: 576px) {
+  .loader_cont .loader {
+    top: 10%;
+  }
+}
+
+.loader_cont .loader span {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(#B25068, #c8a25a, #534666);
+  border-radius: 50%;
+}
+
+.loader_cont .loader span:nth-child(1) {
+  filter: blur(10px);
+}
+
+.loader_cont .loader span:nth-child(2) {
+  filter: blur(25px);
+}
+
+.loader_cont .loader span:nth-child(3) {
+  filter: blur(40px);
+}
+
+.loader_cont .loader::before {
+  content: "";
+  position: absolute;
+  width: 80%;
+  height: 80%;
+  top: 10%;
+  left: 10%;
+  border-radius: 50%;
+  background-color: var(--bgColor);
+  z-index: 2;
+}
+
+@keyframes rotateAnime {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes angleDown {
+
+  0%,
+  10%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+    cursor: pointer;
+  }
+
+  40%,
+  60% {
+    transform: translateY(-20px);
+    opacity: 1;
+    cursor: pointer;
+  }
+}
+
+@keyframes animeName {
+  0% {
+    top: -100%;
+  }
+
+  60% {
+    top: 5%;
+  }
+
+  70% {
+    top: 0;
+  }
+
+  80% {
+    top: 5%;
+  }
+
+  90% {
+    top: 0;
+  }
+
+  100% {
+    top: 5%;
+  }
+}
+
+@keyframes animeJob {
+  0% {
+    top: -100%;
+  }
+
+  60% {
+    top: 85%;
+  }
+
+  70% {
+    top: 80%;
+  }
+
+  80% {
+    top: 85%;
+  }
+
+  90% {
+    top: 80%;
+  }
+
+  100% {
+    top: 85%;
+  }
+}
+
+@keyframes animeNameXs {
+  0% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeImg {
+  to {
+    opacity: 1;
+  }
+}

@@ -1,0 +1,169 @@
+header {
+  background-color: var(--bgColor);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+  transition: var(--mainTransition);
+}
+
+header.scroll {
+  box-shadow: 0 0 15px var(--altColor);
+}
+
+@media (max-width: 576px) {
+  header .container {
+    flex-direction: column;
+  }
+}
+
+header .container .logo {
+  width: fit-content;
+  color: var(--textColor);
+  font-family: var(--fontAlt);
+  font-size: 40px;
+}
+
+header .container .logo .letterK {
+  color: var(--mainColor);
+  font-size: 50px;
+}
+
+@media (max-width: 991px) {
+  header .container nav {
+    justify-content: flex-end !important;
+  }
+}
+
+@media (max-width: 991px) {
+  header .container nav .pages {
+    position: absolute;
+    left: 0;
+    top: -600%;
+    opacity: 0;
+    flex-direction: column;
+    width: 100%;
+    border-radius: 10px;
+    transition: 0.5s;
+    background-color: #333;
+  }
+
+  header .container nav .pages.open {
+    opacity: 1;
+    top: 100%;
+  }
+
+  header .container nav .pages.open a {
+    width: 100%;
+    padding-left: 20px;
+    color: var(--textColor);
+  }
+
+  header .container nav .pages.open a:hover {
+    padding-left: 25px;
+  }
+}
+
+header .container nav .pages a {
+  transition: var(--mainTransition);
+  color: var(--textColor);
+  font-size: 18px;
+  font-weight: 500;
+  padding: 15px;
+  letter-spacing: 1px;
+}
+
+header .container nav .pages a:hover,
+header .container nav .pages a.active {
+  color: var(--mainColor);
+}
+
+header .container nav .info {
+  align-items: center;
+}
+
+header .container nav .info .themeIcon {
+  transition: var(--mainTransition);
+  color: var(--textColor);
+  padding: 15px;
+  font-size: 21px;
+  transition: var(--mainTransition);
+  cursor: pointer;
+}
+
+header .container nav .info .themeIcon:hover {
+  color: var(--mainColor);
+}
+
+header .container nav .info>a {
+  transition: var(--mainTransition);
+}
+
+header .container nav .info>a svg {
+  color: var(--textColor);
+  padding: 15px;
+  font-size: 21px;
+  transition: var(--mainTransition);
+  cursor: pointer;
+}
+
+header .container nav .info>a.github:hover svg {
+  color: #6cc644;
+}
+
+header .container nav .info>a.facebook:hover svg {
+  color: #1877f2;
+}
+
+header .container nav .info>a.linkedin:hover svg {
+  color: #00a0dc;
+}
+
+header .container nav .info .toggle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  padding: 15px;
+  cursor: pointer;
+  transition: var(--mainTransition);
+}
+
+header .container nav .info .toggle:hover span {
+  background-color: var(--mainColor);
+}
+
+header .container nav .info .toggle span {
+  display: block;
+  width: 30px;
+  height: 3px;
+  border-radius: 10px;
+  background-color: var(--textColor);
+  transition: var(--mainTransition);
+}
+
+header .container nav .info .toggle span:nth-child(2) {
+  transition-delay: 0.1s;
+}
+
+header .container nav .info .toggle.open {
+  gap: 0;
+}
+
+header .container nav .info .toggle.open span {
+  background-color: var(--mainColor);
+}
+
+header .container nav .info .toggle.open span:first-child {
+  transition-delay: 0.2s;
+  transform: translateY(2.5px) rotate(-45deg);
+}
+
+header .container nav .info .toggle.open span:nth-child(2) {
+  opacity: 0;
+}
+
+header .container nav .info .toggle.open span:last-child {
+  transition-delay: 0.2s;
+  transform: translateY(-2.5px) rotate(45deg);
+}

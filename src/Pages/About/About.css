@@ -1,0 +1,110 @@
+.About .qual_cont {
+  padding: 20px;
+  color: var(--textColor);
+  box-shadow: 0 0 4px var(--textColor);
+  text-transform: capitalize;
+  text-align: center;
+  letter-spacing: 1px;
+  font-size: 19px;
+  font-weight: 500;
+}
+
+.About .qual_cont p {
+  margin-bottom: 20px;
+  line-height: 1.7;
+}
+
+@media (max-width: 991px) {
+  .About .qual_cont p {
+    margin-bottom: 25px;
+  }
+}
+
+.About .qual_cont p svg {
+  margin: 0 6px;
+  color: var(--mainColor);
+}
+
+.About .qual_cont p span {
+  font-family: var(--fontAlt);
+  font-size: 25px;
+}
+
+.About .About_Info {
+  padding: 20px;
+  color: var(--textColor);
+  box-shadow: 0 0 4px var(--textColor);
+  text-transform: capitalize;
+  text-align: center;
+  letter-spacing: 1px;
+  font-size: 19px;
+  font-weight: 500;
+  margin-top: 50px;
+}
+
+.About .About_Info .col_info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.About .About_Info .col_info p:first-child {
+  color: var(--mainColor);
+  font-weight: 700;
+}
+
+.About .About_Info .col_info p:last-child {
+  margin-left: 7px;
+}
+
+.About .About_Info .col_info p:last-child.gmail {
+  text-transform: lowercase;
+}
+
+@media (max-width: 285px) {
+  .About .About_Info .col_info p:last-child.gmail {
+    font-size: 14px;
+  }
+}
+
+.About .About_Info .col_info .view {
+  display: inline-block;
+  color: var(--mainColor) !important;
+  margin-left: 15px;
+  padding: 5px 19px;
+  margin-bottom: 10px;
+}
+
+.About .About_passion {
+  padding: 20px;
+  color: var(--textColor);
+  box-shadow: 0 0 4px var(--textColor);
+  text-transform: capitalize;
+  text-align: center;
+  letter-spacing: 1px;
+  font-size: 19px;
+  font-weight: 500;
+  margin-top: 50px;
+}
+
+.About .About_passion p {
+  margin-bottom: 20px;
+  line-height: 1.7;
+}
+
+@media (max-width: 991px) {
+  .About .About_passion p {
+    margin-bottom: 25px;
+  }
+}
+
+.About .About_passion p svg {
+  margin: 0 6px;
+  color: var(--mainColor);
+}
+
+.About .About_passion p span {
+  font-family: var(--fontAlt);
+  font-size: 25px;
+}
