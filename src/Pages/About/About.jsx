@@ -1,7 +1,7 @@
 import { faHandPointRight } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Col, Container, Row } from "react-bootstrap";
-import CV from "../../assets/Khaled-Resume.pdf";
+import CV from "../../assets/Khaled-CV.pdf";
 import "./About.css";
 
 import AOS from "aos";
@@ -42,7 +42,7 @@ const About = () => {
             <Col xs={12} md={6} className="col_info mb-3">
               <p>CV:</p>
               <a
-                href="https://drive.google.com/file/d/1BaDXIvxQ9W_rnn94Ca8EZ6_eKGJu8kv2/view?usp=share_link"
+                href="https://drive.google.com/file/d/1KdGogy3ACskXyWTJROIBbZdkZS2HibU2/view?usp=share_link"
                 className="view custom_button"
                 target="_blank"
                 rel="noreferrer"

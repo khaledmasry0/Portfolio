@@ -9,7 +9,13 @@ import {
   faSquareJs,
 } from "@fortawesome/free-brands-svg-icons";
 import { FaGitAlt } from "react-icons/fa";
-import { SiPug, SiRedux, SiFirebase, SiAdobephotoshop } from "react-icons/si";
+import {
+  SiPug,
+  SiRedux,
+  SiFirebase,
+  SiAdobephotoshop,
+  SiTypescript,
+} from "react-icons/si";
 import { images } from "./index";
 
 const Skills = [
@@ -58,6 +64,10 @@ const Skills = [
     iconAlt: <SiRedux />,
   },
   {
+    name: "Typescript",
+    iconAlt: <SiTypescript />,
+  },
+  {
     name: "Firebase",
     iconAlt: <SiFirebase />,
   },
@@ -87,22 +97,28 @@ const projects = [
     website: "https://khaledmasry0.github.io/eShop/",
   },
   {
+    name: "CrEpTo",
+    img: images.project13,
+    github: "https://github.com/khaledmasry0/CrEpTo",
+    website: "https://khaledmasry0.github.io/CrEpTo/",
+  },
+  {
     name: "VawulensGym",
     img: images.project3,
     github: "https://github.com/khaledmasry0/VawulensGym",
     website: "http://vawulensgym-app.surge.sh/",
   },
   {
-    name: "SocialX",
-    img: images.project7,
-    github: "https://github.com/khaledmasry0/SocialX",
-    website: "https://khaledmasry0.github.io/SocialX/",
-  },
-  {
     name: "YoutubeClone",
     img: images.project6,
     github: "https://github.com/khaledmasry0/YouTube-Clone",
     website: "https://khaledmasry0.github.io/YouTube-Clone/",
+  },
+  {
+    name: "SocialX",
+    img: images.project7,
+    github: "https://github.com/khaledmasry0/SocialX",
+    website: "https://khaledmasry0.github.io/SocialX/",
   },
   {
     name: "Delivery",

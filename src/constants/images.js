@@ -12,6 +12,7 @@ import project9 from "../assets/Projects/GPT3.png";
 import project10 from "../assets/Projects/PWgen.png";
 import project11 from "../assets/Projects/Weather App.png";
 import project12 from "../assets/Projects/manage.png";
+import project13 from "../assets/Projects/crepto.png";
 
 export default {
   profile,
@@ -28,4 +29,5 @@ export default {
   project10,
   project11,
   project12,
+  project13,
 };
