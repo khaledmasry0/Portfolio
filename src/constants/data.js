@@ -8,13 +8,17 @@ import {
   faSass,
   faSquareJs,
 } from "@fortawesome/free-brands-svg-icons";
-import { FaGitAlt } from "react-icons/fa";
+import { FaGitAlt, FaNode } from "react-icons/fa";
 import {
   SiPug,
   SiRedux,
   SiFirebase,
   SiAdobephotoshop,
   SiTypescript,
+  SiMongodb,
+  SiExpress,
+  SiJquery,
+  SiNextdotjs,
 } from "react-icons/si";
 import { images } from "./index";
 
@@ -40,16 +44,12 @@ const Skills = [
     icon: faSass,
   },
   {
-    name: "Git",
-    iconAlt: <FaGitAlt />,
-  },
-  {
-    name: "Github",
-    icon: faGithub,
-  },
-  {
     name: "Pug",
     iconAlt: <SiPug />,
+  },
+  {
+    name: "jQuery",
+    iconAlt: <SiJquery />,
   },
   {
     name: "Gulp",
@@ -64,12 +64,36 @@ const Skills = [
     iconAlt: <SiRedux />,
   },
   {
+    name: "Next.js",
+    iconAlt: <SiNextdotjs />,
+  },
+  {
     name: "Typescript",
     iconAlt: <SiTypescript />,
   },
   {
+    name: "Node.js",
+    iconAlt: <FaNode />,
+  },
+  {
+    name: "Express",
+    iconAlt: <SiExpress />,
+  },
+  {
+    name: "Mongodb",
+    iconAlt: <SiMongodb />,
+  },
+  {
     name: "Firebase",
     iconAlt: <SiFirebase />,
+  },
+  {
+    name: "Git",
+    iconAlt: <FaGitAlt />,
+  },
+  {
+    name: "Github",
+    icon: faGithub,
   },
   {
     name: "photoshop",
