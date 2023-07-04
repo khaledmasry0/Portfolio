@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Portfolio/static/css/main.cd267760.css",
-    "main.js": "/Portfolio/static/js/main.1ce0a740.js",
+    "main.js": "/Portfolio/static/js/main.ff846700.js",
     "static/media/DesineyClone.png": "/Portfolio/static/media/DesineyClone.0a9f7156cc68573715cf.png",
     "static/media/movies.png": "/Portfolio/static/media/movies.52997379b252bd753ef2.png",
     "static/media/YoutubeClone.png": "/Portfolio/static/media/YoutubeClone.609220724b323e0d6c9d.png",
@@ -15,15 +15,15 @@
     "static/media/Delivery.png": "/Portfolio/static/media/Delivery.ce98651ceac239ec9754.png",
     "static/media/Weather App.png": "/Portfolio/static/media/Weather App.4a5c14bf8a408cc082a1.png",
     "static/media/contact_img.png": "/Portfolio/static/media/contact_img.e425c31fd27f37cff355.png",
-    "static/media/Khaled-CV.pdf": "/Portfolio/static/media/Khaled-CV.25589dbcfb1939ceac57.pdf",
+    "static/media/Khaled-CV.pdf": "/Portfolio/static/media/Khaled-CV.65a094e5b53aa7d59ead.pdf",
     "static/media/manage.png": "/Portfolio/static/media/manage.487b534b41cf27348ab3.png",
     "static/media/profile.jpg": "/Portfolio/static/media/profile.7817460eb780e7eac21b.jpg",
     "index.html": "/Portfolio/index.html",
     "main.cd267760.css.map": "/Portfolio/static/css/main.cd267760.css.map",
-    "main.1ce0a740.js.map": "/Portfolio/static/js/main.1ce0a740.js.map"
+    "main.ff846700.js.map": "/Portfolio/static/js/main.ff846700.js.map"
   },
   "entrypoints": [
     "static/css/main.cd267760.css",
-    "static/js/main.1ce0a740.js"
+    "static/js/main.ff846700.js"
   ]
 }
