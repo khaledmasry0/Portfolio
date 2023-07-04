@@ -60,6 +60,10 @@ const Skills = [
     icon: faReact,
   },
   {
+    name: "React Native",
+    icon: faReact,
+  },
+  {
     name: "Redux",
     iconAlt: <SiRedux />,
   },
