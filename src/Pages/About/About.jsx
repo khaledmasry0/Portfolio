@@ -16,7 +16,7 @@ const About = () => {
       <Container>
         <article className="qual_cont" data-aos={"fade-up"}>
           <p>
-            Hi , I'm a Front-end web developer with <span>1</span>+ years of
+            Hi , I'm a Front-end web developer with <span>2</span>+ years of
             experience in building responsive web apps.
           </p>
           <p>
@@ -33,7 +33,7 @@ const About = () => {
             </Col>
             <Col xs={12} md={6} className="col_info mb-3">
               <p>Age:</p>
-              <p className="fontalt mt-1">25</p>
+              <p className="fontalt mt-1">26</p>
             </Col>
             <Col xs={12} md={6} className="col_info mb-3">
               <p>Country:</p>
