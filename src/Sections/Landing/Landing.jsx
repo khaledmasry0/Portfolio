@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAnglesDown } from "@fortawesome/free-solid-svg-icons";
 import { useRef } from "react";
 import "./Landing.css";
+import prof from "../../assets/prof1.jpg";
 
 const Landing = () => {
   const angledown = useRef();
@@ -33,13 +34,17 @@ const Landing = () => {
               </clipPath>
             </defs>
             <image
-              style={{ filter: "opacity(0.95)" }}
+              style={{
+                filter: "opacity(0.95)",
+                transform: "rotate(7deg)",
+                transformOrigin: "center",
+              }}
               x="0"
-              y="30"
+              y="0"
               width="100%"
               height="100%"
               clipPath="url(#blob)"
-              xlinkHref={images.profile}
+              xlinkHref={prof}
               preserveAspectRatio="xMidYMid slice"
             ></image>
           </svg>

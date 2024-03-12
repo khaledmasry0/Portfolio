@@ -7,10 +7,12 @@
   letter-spacing: 1px;
   font-size: 19px;
   font-weight: 500;
+  margin-top: 50px;
 }
 
 .About .qual_cont p {
   margin-bottom: 20px;
+
   line-height: 1.7;
 }
 
