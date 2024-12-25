@@ -107,10 +107,35 @@ const Skills = [
 
 const projects = [
   {
-    name: "Elmasry-Commerce",
-    img: images.project2,
-    github: "https://github.com/khaledmasry0/Elmasry-e-Shop",
-    website: "https://am-commerce.web.app/",
+    name: "CodeyAi",
+    img: images.codeyai,
+    github: null,
+    website: "https://codeyai.com/",
+  },
+  {
+    name: "Organica-Group",
+    img: images.organica,
+    github: null,
+    website: "https://organica-group.com/",
+  },
+  {
+    name: "Modern-North",
+    img: images.modernNorth,
+    github: null,
+    website: "https://modern-north-sa.com/",
+  },
+  {
+    name: "Tic-Tac-Toe",
+    img: images.xo,
+    github: "https://github.com/khaledmasry0/Tec-Tac-Toe-Game/",
+    website: "https://khaledmasry0.github.io/Tec-Tac-Toe-Game/",
+    small: "small",
+  },
+  {
+    name: "CrEpTo",
+    img: images.project13,
+    github: "https://github.com/khaledmasry0/CrEpTo",
+    website: "https://khaledmasry0.github.io/CrEpTo/",
   },
   {
     name: "GPT-3",
@@ -119,17 +144,19 @@ const projects = [
     website: "https://khaledmasry0.github.io/GPT-3-Site/",
   },
   {
+    name: "Elmasry-Commerce",
+    img: images.project2,
+    github: "https://github.com/khaledmasry0/Elmasry-e-Shop",
+    website: "https://am-commerce.web.app/",
+  },
+
+  {
     name: "eShop",
     img: images.project4,
     github: "https://github.com/khaledmasry0/eShop",
     website: "https://khaledmasry0.github.io/eShop/",
   },
-  {
-    name: "CrEpTo",
-    img: images.project13,
-    github: "https://github.com/khaledmasry0/CrEpTo",
-    website: "https://khaledmasry0.github.io/CrEpTo/",
-  },
+
   {
     name: "VawulensGym",
     img: images.project3,

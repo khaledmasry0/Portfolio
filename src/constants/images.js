@@ -13,10 +13,18 @@ import project10 from "../assets/Projects/PWgen.png";
 import project11 from "../assets/Projects/Weather App.png";
 import project12 from "../assets/Projects/manage.png";
 import project13 from "../assets/Projects/crepto.png";
+import organica from "../assets/Projects/organica.jpeg";
+import modernNorth from "../assets/Projects/modern-north.jpeg";
+import codeyai from "../assets/Projects/codeyai.jpeg";
+import xo from "../assets/Projects/xo.jpeg";
 
 export default {
+  codeyai,
+  xo,
   profile,
   contact,
+  organica,
+  modernNorth,
   project1,
   project2,
   project3,
