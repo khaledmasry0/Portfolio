@@ -1,95 +1,92 @@
 import {
-  faFacebookF,
   faGithub,
   faLinkedinIn,
 } from "@fortawesome/free-brands-svg-icons";
-import { faLightbulb, faMoon } from "@fortawesome/free-solid-svg-icons";
+import { faSun, faMoon, faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { Container } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
+import { motion, AnimatePresence } from "framer-motion";
 import "./Navbar.css";
 
+const navLinks = [
+  { path: "/", label: "Home" },
+  { path: "/Projects", label: "Projects" },
+  { path: "/About", label: "About" },
+  { path: "/Contact", label: "Contact" },
+];
+
 const Navbar = ({ lightMode }) => {
-  const [light, setlight] = useState(lightMode);
-  const mynav = useRef();
-  const navref = useRef();
-  const toggleref = useRef();
-  const stopPropa = (e) => {
-    e.stopPropagation();
-  };
-  const handleDarkMode = (e) => {
-    stopPropa(e);
-    setlight(!light);
+  const [light, setLight] = useState(lightMode);
+  const [scrolled, setScrolled] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
+
+  const handleDarkMode = () => {
+    setLight(!light);
     document.body.classList.toggle("light");
     localStorage.setItem("Light Mode", !light);
   };
-  const handleclassopen = (...ele) => {
-    ele.forEach((element) => {
-      element.current.classList.toggle("open");
-    });
-  };
-  const handlenav = (e) => {
-    stopPropa(e);
-    handleclassopen(toggleref, navref);
-  };
+
   useEffect(() => {
-    document.addEventListener("click", (e) => {
-      if (e.target !== toggleref) {
-        if (navref.current.classList.contains("open")) {
-          handleclassopen(toggleref, navref);
-        }
-      }
-    });
-    window.onscroll = () => {
-      if (window.scrollY === 0) {
-        mynav.current.classList.remove("scroll");
-      } else {
-        mynav.current.classList.add("scroll");
-      }
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
     };
-  });
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    if (mobileOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+  }, [mobileOpen]);
+
   return (
-    <header ref={mynav}>
-      <Container className="d-flex align-items-center position-relative pt-2">
-        <NavLink exact="true" to="/" className="logo">
-          <span className="letterK">Kh</span>aled
+    <header className={`navbar_header ${scrolled ? "scrolled" : ""}`}>
+      <Container className="navbar_container">
+        <NavLink to="/" className="logo" onClick={() => setMobileOpen(false)}>
+          <span className="logo_highlight">Kh</span>aled
         </NavLink>
-        <nav className="flex_between flex-grow-1">
-          <div
-            className="pages d-flex flex-grow-1 justify-content-center"
-            ref={navref}
-          >
-            <NavLink exact="true" to="/">
-              Home
-            </NavLink>
-            <NavLink exact="true" to="/Projects">
-              Projects
-            </NavLink>
-            <NavLink exact="true" to="/About">
-              About
-            </NavLink>
-            <NavLink exact="true" to="/Contact">
-              Contact
-            </NavLink>
+
+        <nav className="navbar_nav">
+          <div className="navbar_links">
+            {navLinks.map((link) => (
+              <NavLink
+                key={link.path}
+                to={link.path}
+                className={({ isActive }) =>
+                  `nav_link ${isActive ? "active" : ""}`
+                }
+                end={link.path === "/"}
+              >
+                {link.label}
+              </NavLink>
+            ))}
           </div>
-          <div className="info d-flex">
-            {light ? (
-              <FontAwesomeIcon
-                icon={faMoon}
-                className="themeIcon"
-                onClick={handleDarkMode}
-              />
-            ) : (
-              <FontAwesomeIcon
-                icon={faLightbulb}
-                className="themeIcon"
-                onClick={handleDarkMode}
-              />
-            )}
+
+          <div className="navbar_actions">
+            <button
+              className="theme_toggle"
+              onClick={handleDarkMode}
+              aria-label="Toggle theme"
+            >
+              <motion.div
+                key={light ? "sun" : "moon"}
+                initial={{ rotate: -90, opacity: 0 }}
+                animate={{ rotate: 0, opacity: 1 }}
+                exit={{ rotate: 90, opacity: 0 }}
+                transition={{ duration: 0.3 }}
+              >
+                <FontAwesomeIcon icon={light ? faMoon : faSun} />
+              </motion.div>
+            </button>
+
             <a
               href="https://github.com/khaledmasry0"
-              className="github"
+              className="social_link"
               target="_blank"
               rel="noreferrer"
               aria-label="Github"
@@ -97,36 +94,60 @@ const Navbar = ({ lightMode }) => {
               <FontAwesomeIcon icon={faGithub} />
             </a>
             <a
-              href="https://www.facebook.com/khaledmohamed01"
-              className="facebook"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="Facebook"
-            >
-              <FontAwesomeIcon icon={faFacebookF} />
-            </a>
-            <a
               href="https://www.linkedin.com/in/khaled-elmasry-4b4689255/"
-              className="linkedin"
+              className="social_link"
               target="_blank"
               rel="noreferrer"
-              aria-label="Linkedin"
+              aria-label="LinkedIn"
             >
               <FontAwesomeIcon icon={faLinkedinIn} />
             </a>
-            <div
-              className="toggle d-lg-none"
-              ref={toggleref}
-              onClick={handlenav}
+
+            <button
+              className="mobile_toggle d-lg-none"
+              onClick={() => setMobileOpen(!mobileOpen)}
+              aria-label="Toggle menu"
             >
-              <span></span>
-              <span></span>
-              <span></span>
-            </div>
+              <FontAwesomeIcon icon={mobileOpen ? faXmark : faBars} />
+            </button>
           </div>
         </nav>
       </Container>
+
+      {/* Mobile Menu */}
+      <AnimatePresence>
+        {mobileOpen && (
+          <motion.div
+            className="mobile_menu"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.3 }}
+          >
+            {navLinks.map((link, index) => (
+              <motion.div
+                key={link.path}
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: index * 0.1 }}
+              >
+                <NavLink
+                  to={link.path}
+                  className={({ isActive }) =>
+                    `mobile_link ${isActive ? "active" : ""}`
+                  }
+                  end={link.path === "/"}
+                  onClick={() => setMobileOpen(false)}
+                >
+                  {link.label}
+                </NavLink>
+              </motion.div>
+            ))}
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   );
 };
+
 export default Navbar;

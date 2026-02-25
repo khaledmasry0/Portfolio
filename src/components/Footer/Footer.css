@@ -1,213 +1,58 @@
 .footer {
-  color: var(--textColor);
-  padding: 50px 0;
-  text-align: center;
+  background: var(--bgSecondary);
+  border-top: var(--glassBorder);
+  padding: 40px 0;
 }
 
-.footer .social {
-  justify-content: center;
+.footer_content {
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  flex-wrap: wrap;
+  gap: 20px;
 }
 
-.footer .social li {
-  padding: 5px 10px;
+.footer_social {
+  display: flex;
+  gap: 12px;
 }
 
-.footer .social li a {
-  padding: 5px;
+.footer_social_link {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  border: 1px solid var(--borderColor);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--textMuted) !important;
+  font-size: 18px;
+  transition: all var(--mainTransition);
+}
+
+.footer_social_link:hover {
+  color: #fff !important;
+  background: var(--gradient);
+  border-color: transparent;
+  transform: translateY(-4px);
+  box-shadow: 0 4px 16px rgba(200, 162, 90, 0.25);
+}
+
+.footer_divider {
+  width: 60px;
+  height: 2px;
+  background: var(--gradient);
+  border-radius: 1px;
+}
+
+.footer_credit {
+  font-size: 15px;
   color: var(--textColor);
-  transition: var(--mainTransition);
-  position: relative;
-  font-size: 25px;
-}
-
-.footer .social li a.Github::before {
-  content: "Github";
-  position: absolute;
-  width: fit-content;
-  top: -40px;
-  left: -50%;
-  padding: 5px 10px;
-  background-color: var(--mainColor);
-  color: #fff;
-  padding: 5px 10px;
-  font-size: 17px;
+  margin: 0;
   font-weight: 500;
-  transition: var(--mainTransition);
-  transform: scale(0);
 }
 
-.footer .social li a.Github:hover::before {
-  transform: scale(1);
-}
-
-.footer .social li a.Github:hover svg {
-  color: #6cc644;
-}
-
-.footer .social li a.Instagram::before {
-  content: "Instagram";
-  position: absolute;
-  width: fit-content;
-  top: -40px;
-  left: -50%;
-  padding: 5px 10px;
-  background-color: var(--mainColor);
-  color: #fff;
-  padding: 5px 10px;
-  font-size: 17px;
-  font-weight: 500;
-  transition: var(--mainTransition);
-  transform: scale(0);
-}
-
-.footer .social li a.Instagram:hover::before {
-  transform: scale(1);
-}
-
-.footer .social li a.Instagram:hover svg {
-  color: #833ab4;
-}
-
-.footer .social li a.Linkedin::before {
-  content: "Linkedin";
-  position: absolute;
-  width: fit-content;
-  top: -40px;
-  left: -50%;
-  padding: 5px 10px;
-  background-color: var(--mainColor);
-  color: #fff;
-  padding: 5px 10px;
-  font-size: 17px;
-  font-weight: 500;
-  transition: var(--mainTransition);
-  transform: scale(0);
-}
-
-.footer .social li a.Linkedin:hover::before {
-  transform: scale(1);
-}
-
-.footer .social li a.Linkedin:hover svg {
-  color: #00a0dc;
-}
-
-.footer .social li a.Facebook::before {
-  content: "Facebook";
-  position: absolute;
-  width: fit-content;
-  top: -40px;
-  left: -50%;
-  padding: 5px 10px;
-  background-color: var(--mainColor);
-  color: #fff;
-  padding: 5px 10px;
-  font-size: 17px;
-  font-weight: 500;
-  transition: var(--mainTransition);
-  transform: scale(0);
-}
-
-.footer .social li a.Facebook:hover::before {
-  transform: scale(1);
-}
-
-.footer .social li a.Facebook:hover svg {
-  color: #1877f2;
-}
-
-.footer .social li a.Gmail::before {
-  content: "Gmail";
-  position: absolute;
-  width: fit-content;
-  top: -40px;
-  left: -50%;
-  padding: 5px 10px;
-  background-color: var(--mainColor);
-  color: #fff;
-  padding: 5px 10px;
-  font-size: 17px;
-  font-weight: 500;
-  transition: var(--mainTransition);
-  transform: scale(0);
-}
-
-.footer .social li a.Gmail:hover::before {
-  transform: scale(1);
-}
-
-.footer .social li a.Gmail:hover svg {
-  color: #fd1d1d;
-}
-
-.footer .social li a.Messenger::before {
-  content: "Messenger";
-  position: absolute;
-  width: fit-content;
-  top: -40px;
-  left: -50%;
-  padding: 5px 10px;
-  background-color: var(--mainColor);
-  color: #fff;
-  padding: 5px 10px;
-  font-size: 17px;
-  font-weight: 500;
-  transition: var(--mainTransition);
-  transform: scale(0);
-}
-
-.footer .social li a.Messenger:hover::before {
-  transform: scale(1);
-}
-
-.footer .social li a.Messenger:hover svg {
-  color: #0084ff;
-}
-
-.footer .social li a.WhatsApp::before {
-  content: "WhatsApp";
-  position: absolute;
-  width: fit-content;
-  top: -40px;
-  left: -50%;
-  padding: 5px 10px;
-  background-color: var(--mainColor);
-  color: #fff;
-  padding: 5px 10px;
-  font-size: 17px;
-  font-weight: 500;
-  transition: var(--mainTransition);
-  transform: scale(0);
-}
-
-.footer .social li a.WhatsApp:hover::before {
-  transform: scale(1);
-}
-
-.footer .social li a.WhatsApp:hover svg {
-  color: #25d366;
-}
-
-.footer .social li a svg {
-  transition: var(--mainTransition);
-}
-
-.footer .made {
-  margin-top: 20px;
-  font-size: 19px;
-}
-
-.footer .made span {
-  font-family: var(--fontAlt);
-  color: var(--mainColor);
-  font-size: 30px;
-  margin-left: 5px;
-}
-
-@media (max-width: 576px) {
-  .footer .made span {
-    font-size: 25px;
-  }
+.footer_year {
+  font-size: 13px;
+  color: var(--textMuted);
+  margin: 0;
 }

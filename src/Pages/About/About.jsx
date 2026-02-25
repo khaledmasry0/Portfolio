@@ -1,98 +1,221 @@
-import { faHandPointRight } from "@fortawesome/free-regular-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Col, Container, Row } from "react-bootstrap";
-import CV from "../../assets/Khaled.Fe-CV.pdf";
+import { motion } from "framer-motion";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faMapMarkerAlt,
+  faPhone,
+  faEnvelope,
+  faGraduationCap,
+  faLanguage,
+  faDownload,
+  faExternalLinkAlt,
+  faCalendarAlt,
+  faBriefcase,
+} from "@fortawesome/free-solid-svg-icons";
+import { faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
+import { data } from "../../constants";
+import { ParticleField } from "../../components/3d";
+import CV from "../../assets/khaled_Mohamed_FE.pdf";
 import "./About.css";
 
-import AOS from "aos";
-AOS.init({
-  once: true,
-});
+const getAge = (birthdate) => {
+  const today = new Date();
+  const birth = new Date(birthdate);
+  let age = today.getFullYear() - birth.getFullYear();
+  const m = today.getMonth() - birth.getMonth();
+  if (m < 0 || (m === 0 && today.getDate() < birth.getDate())) age--;
+  return age;
+};
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1, transition: { staggerChildren: 0.15 } },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+};
+
+const { personalInfo, education } = data;
 
 const About = () => {
   return (
-    <section className="About section_padding">
-      <h2 className="main_heading">About Me</h2>
-      <Container>
-        <article className="About_Info" data-aos={"fade-up"}>
-          <Row>
-            <Col xs={12} md={6} className="col_info mb-3">
-              <p>Name:</p>
-              <p>Khaled Mohamed</p>
-            </Col>
-            <Col xs={12} md={6} className="col_info mb-3">
-              <p>Age:</p>
-              <p className="fontalt mt-1">27</p>
-            </Col>
-            <Col xs={12} md={6} className="col_info mb-3">
-              <p>Country:</p>
-              <p>Egypt</p>
-            </Col>
-            <Col xs={12} md={6} className="col_info mb-3">
-              <p>CV:</p>
+    <section className="about section_padding">
+      <ParticleField intensity="light" showRings showStars={false} />
+
+      <div style={{ position: "relative", zIndex: 1 }}>
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+        >
+          <h2 className="main_heading">
+            About <span>Me</span>
+          </h2>
+        </motion.div>
+
+        <Container>
+          <motion.div
+            className="about_bio glass_card"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <div className="about_bio_header">
+              <h3 className="gradient_text">{personalInfo.name}</h3>
+              <p className="about_title">{personalInfo.title}</p>
+            </div>
+            <p className="about_description">{personalInfo.bio}</p>
+            <div className="about_cta">
               <a
-                href="https://drive.google.com/file/d/1y_qcSykBOKOeTv-1Wsb8Qc08HxBs6-cO/view?usp=sharing"
-                className="view custom_button"
+                href="https://drive.google.com/file/d/1McE331p3h_b-0e8AF80Cx98Fmj21H3JO/view?usp=sharing"
+                className="custom_button"
                 target="_blank"
                 rel="noreferrer"
               >
-                View
+                <FontAwesomeIcon icon={faExternalLinkAlt} /> View CV
               </a>
-              <a
-                href={CV}
-                className="view custom_button"
-                rel="noreferrer"
-                download
+              <a href={CV} className="custom_button" rel="noreferrer" download>
+                <FontAwesomeIcon icon={faDownload} /> Download CV
+              </a>
+            </div>
+          </motion.div>
+
+          <motion.div
+            className="about_info_grid"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
+            <motion.div className="about_info_card glass_card" variants={itemVariants}>
+              <FontAwesomeIcon icon={faMapMarkerAlt} className="info_icon" />
+              <div>
+                <p className="info_label">Location</p>
+                <p className="info_value">{personalInfo.location}</p>
+              </div>
+            </motion.div>
+            <motion.div className="about_info_card glass_card" variants={itemVariants}>
+              <FontAwesomeIcon icon={faCalendarAlt} className="info_icon" />
+              <div>
+                <p className="info_label">Age</p>
+                <p className="info_value">{getAge(personalInfo.birthdate)} years old</p>
+              </div>
+            </motion.div>
+            <motion.div className="about_info_card glass_card" variants={itemVariants}>
+              <FontAwesomeIcon icon={faPhone} className="info_icon" />
+              <div>
+                <p className="info_label">Phone</p>
+                <a href={`tel:${personalInfo.phone}`} className="info_value">
+                  {personalInfo.phone}
+                </a>
+              </div>
+            </motion.div>
+            <motion.div className="about_info_card glass_card" variants={itemVariants}>
+              <FontAwesomeIcon icon={faEnvelope} className="info_icon" />
+              <div>
+                <p className="info_label">Email</p>
+                <a href={`mailto:${personalInfo.email}`} className="info_value">
+                  {personalInfo.email}
+                </a>
+              </div>
+            </motion.div>
+            <motion.div className="about_info_card glass_card" variants={itemVariants}>
+              <FontAwesomeIcon icon={faLinkedinIn} className="info_icon" />
+              <div>
+                <p className="info_label">LinkedIn</p>
+                <a
+                  href={personalInfo.linkedin}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="info_value"
+                >
+                  View Profile
+                </a>
+              </div>
+            </motion.div>
+            <motion.div className="about_info_card glass_card" variants={itemVariants}>
+              <FontAwesomeIcon icon={faBriefcase} className="info_icon" />
+              <div>
+                <p className="info_label">Experience</p>
+                <p className="info_value">5+ Years</p>
+              </div>
+            </motion.div>
+          </motion.div>
+
+          <Row className="about_bottom_row">
+            <Col xs={12} lg={7}>
+              <motion.div
+                className="about_education"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: true }}
               >
-                Download
-              </a>
+                <h3 className="about_section_title">
+                  <FontAwesomeIcon icon={faGraduationCap} /> Education
+                </h3>
+                <div className="education_list">
+                  {education.map((edu, index) => (
+                    <motion.div
+                      key={index}
+                      className="education_item glass_card"
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.5, delay: index * 0.15 }}
+                      viewport={{ once: true }}
+                    >
+                      <div className="education_dot" />
+                      <div className="education_content">
+                        <h4>{edu.title}</h4>
+                        <p className="education_institution">{edu.institution}</p>
+                        {edu.year && (
+                          <span className="education_year">{edu.year}</span>
+                        )}
+                        {edu.grade && (
+                          <span className="education_grade">Grade: {edu.grade}</span>
+                        )}
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
+              </motion.div>
             </Col>
-            <Col xs={12} md={6} className="col_info mb-0">
-              <p>Phone:</p>
-              <p className="fontalt mt-1">01011131316</p>
-            </Col>
-            <Col xs={12} md={6} className="col_info mb-0">
-              <p>Gmail:</p>
-              <p className="gmail">khaledmohamed3360@gmail.com</p>
+            <Col xs={12} lg={5}>
+              <motion.div
+                className="about_languages"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                viewport={{ once: true }}
+              >
+                <h3 className="about_section_title">
+                  <FontAwesomeIcon icon={faLanguage} /> Languages
+                </h3>
+                <div className="languages_list">
+                  {personalInfo.languages.map((lang, index) => (
+                    <div key={index} className="language_item glass_card">
+                      <span className="language_name">{lang.name}</span>
+                      <span className="language_level">{lang.level}</span>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="about_passion glass_card">
+                  <p>
+                    I'm looking forward to building long-term relationships with
+                    my clients. Programming is my passion -- I love to learn
+                    something new every day.
+                  </p>
+                </div>
+              </motion.div>
             </Col>
           </Row>
-        </article>
-        <article className="qual_cont" data-aos={"fade-up"}>
-          {/* <p>
-            Hi , I'm a Front-end web developer with +<span>2</span> years of
-            experience in building responsive web apps.
-          </p> */}
-          <p>
-            Hi , I'm a Software developer specialized in frontend Web
-            Development with 3+ years of experience delivering innovative and
-            user-centric web applications. Proficient in modern technologies
-            such as React.js, TypeScript, Next.js, and HTML5. Expertise includes
-            object-oriented programming (OOP), multithreading, and responsive
-            design. Skilled in collaborating within agile teams to develop
-            high-performance, secure, and scalable web solutions across
-            industries including e-commerce, AI platforms, and military
-            applications. Recognized for strong problem-solving skills and a
-            commitment to continuous improvement.
-          </p>
-          <p>
-            <span>2021</span>
-            <FontAwesomeIcon icon={faHandPointRight} /> Graduated with a good
-            grade , Bachelor's degree in Science, Cairo University.
-          </p>
-        </article>
-
-        <article className="About_passion" data-aos={"fade-up"}>
-          <p>
-            I'm looking forward to building a long-term relationship with my
-            clients. The programming is my Passion , I love to learn something
-            new everyday
-          </p>
-          <p>
-            <FontAwesomeIcon icon={faHandPointRight} /> And Finally , My
-            favourite Sport is Chess
-          </p>
-        </article>
-      </Container>
+        </Container>
+      </div>
     </section>
   );
 };

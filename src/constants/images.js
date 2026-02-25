@@ -18,7 +18,7 @@ import modernNorth from "../assets/Projects/modern-north.jpeg";
 import codeyai from "../assets/Projects/codeyai.jpeg";
 import xo from "../assets/Projects/xo.jpeg";
 
-export default {
+const images = {
   codeyai,
   xo,
   profile,
@@ -39,3 +39,5 @@ export default {
   project12,
   project13,
 };
+
+export default images;

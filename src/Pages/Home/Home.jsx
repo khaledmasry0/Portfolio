@@ -1,11 +1,11 @@
-import { Landing, Qualification, Skills } from "../../Sections";
+import { Landing, Qualification, Experience, Skills } from "../../Sections";
 
 const Home = () => {
-  //khaled
   return (
     <>
       <Landing />
       <Qualification />
+      <Experience />
       <Skills />
     </>
   );
